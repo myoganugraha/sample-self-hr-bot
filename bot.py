@@ -47,4 +47,9 @@ def message_handler(message):
                      reply_markup=gen_markup())
 
 
+@bot.message_handler(commands=['myid'])
+def message_handler(message):
+    bot.send_message(message.chat.id, f'User ID anda: {message.from_user.id}')
+
+
 bot.infinity_polling()
